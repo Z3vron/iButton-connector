@@ -1,0 +1,15 @@
+--cpu Cortex-M3
+".\objects\main.o"
+".\objects\lcd_ili9325.o"
+".\objects\open1768_lcd.o"
+".\objects\asciilib.o"
+".\objects\joystick_open1768.o"
+".\objects\led_open1768.o"
+".\objects\gpio_lpc17xx.o"
+".\objects\pin_lpc17xx.o"
+".\objects\startup_lpc17xx.o"
+".\objects\system_lpc17xx.o"
+--strict --scatter ".\Objects\projekt_wbudowane.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\projekt_wbudowane.map" -o .\Objects\projekt_wbudowane.axf

@@ -1,0 +1,93 @@
+#include "LPC17xx.h"                	// Device header
+#include "PIN_LPC17xx.h"            	// Keil::Device:PIN
+#include <string.h>
+#include "Board_LED.h"                  // ::Board Support:LED
+
+volatile uint32_t us_ticks = 0;
+
+void SysTick_Handler(void){
+    us_ticks++;
+}
+
+void delay(uint32_t time_in_us){
+    us_ticks = 0;
+    while(us_ticks < time_in_us);
+}
+
+void startTime()
+{
+    us_ticks = 0;
+}
+
+uint32_t readTime()
+{
+    return us_ticks;
+}
+
+uint32_t checkPin()
+{
+		if ((LPC_GPIO2->FIOPIN & (1<<11)) != 0)
+			return 1;
+		else
+			return 0;
+}
+
+void sendZero(){
+    LPC_GPIO2->FIODIR |= (1<<11);
+}
+
+void sendOne(){
+    LPC_GPIO2->FIODIR &= ~(1<<11);
+}
+
+void print(char string[])
+{
+	for (int i = 0; i < strlen(string); i++)
+	{
+		while ((LPC_UART0->LSR & (1<<5)) == 0);
+		LPC_UART0->THR = string[i];
+	}
+}
+
+int main(){
+			LPC_UART0->LCR = 0b10000011;
+			LPC_UART0->DLL = 10;
+			LPC_UART0->DLM = 0;
+			LPC_UART0->LCR = 0b11;
+			LPC_UART0->FDR = (5<<0) | (14<<4);	
+			PIN_Configure(0,2,1,0,0);
+			PIN_Configure(0,3,1,0,0);
+			
+			SysTick_Config(SystemCoreClock / 1000000);
+			PIN_Configure(2, 11, 0, PIN_PINMODE_TRISTATE, 0);
+			
+			LPC_GPIO2->FIOCLR = 1<<11;
+			
+			
+			sendZero();
+			delay(480);
+			sendOne();
+			delay(70);
+			// sprawdz czy na bicie jest 1 jakim bicie??? rób to mierzac czas
+			if(checkPin() == 0)
+					print("working");
+			while(1)
+			{			
+				/*sendZero();
+				delay(5000000);
+				if (checkPin() == 1)
+					print("HIGH");
+				else
+					print("LOW");
+				sendOne();
+				delay(5000000);
+				if (checkPin() == 1)
+					print("HIGH");
+				else
+					print("LOW");*/
+			}
+		
+   	 
+    
+    return 0;
+}

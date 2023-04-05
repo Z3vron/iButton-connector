@@ -1,0 +1,6 @@
+C:/Users/0brzyski/DOCUME~1/MOBAXT~1/slash/bin   /usr/bin    ntfs        binary,auto,user,posix=0           0   0
+C:/Users/0brzyski/DOCUME~1/MOBAXT~1/slash/lib   /usr/lib    ntfs        binary,auto,user,posix=0           0   0
+C:/Users/0brzyski/DOCUME~1/MOBAXT~1/slash       /           ntfs        override,binary,auto,user,posix=0  0   0
+none            /drives   cygdrive    binary,auto,user,posix=0   0   0
+C:/Users/0brzyski/DOCUME~1/MOBAXT~1/home            /home/mobaxterm   ntfs    binary,auto,user,posix=0           0   0
+C:/Users/0brzyski/DOCUME~1/MOBAXT~1/home            /home/0brzyski   ntfs    binary,auto,user,posix=0           0   0

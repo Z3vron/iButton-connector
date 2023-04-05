@@ -1,0 +1,25 @@
+Access Control Assistance Operators:S-1-5-32-579:579:
+Administrators:S-1-5-32-544:544:
+Backup Operators:S-1-5-32-551:551:
+Certificate Service DCOM Access:S-1-5-32-574:574:
+Cryptographic Operators:S-1-5-32-569:569:
+Distributed COM Users:S-1-5-32-562:562:
+Event Log Readers:S-1-5-32-573:573:
+Guests:S-1-5-32-546:546:
+Hyper-V Administrators:S-1-5-32-578:578:
+IIS_IUSRS:S-1-5-32-568:568:
+Network Configuration Operators:S-1-5-32-556:556:
+Performance Log Users:S-1-5-32-559:559:
+Performance Monitor Users:S-1-5-32-558:558:
+Power Users:S-1-5-32-547:547:
+Print Operators:S-1-5-32-550:550:
+RDS Endpoint Servers:S-1-5-32-576:576:
+RDS Management Servers:S-1-5-32-577:577:
+RDS Remote Access Servers:S-1-5-32-575:575:
+Remote Desktop Users:S-1-5-32-555:555:
+Remote Management Users:S-1-5-32-580:580:
+Replicator:S-1-5-32-552:552:
+Storage Replica Administrators:S-1-5-32-582:582:
+System Managed Accounts Group:S-1-5-32-581:581:
+Users:S-1-5-32-545:545:
+UsersGrp:S-1-5-32-513:513:
